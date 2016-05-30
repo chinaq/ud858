@@ -34,6 +34,17 @@ handlers:       # static then dynamic
   script: conference.api
   secure: always
 
+# add crons cache
+- url: /crons/set_announcement
+  script: main.app
+  login: admin
+
+# add tasks
+- url: /tasks/send_confirmation_email
+  script: main.app
+  login: admin
+
+
 libraries:
 
 - name: endpoints
